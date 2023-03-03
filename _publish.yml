@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: e8007f98-621a-4d49-b250-0baa642b80c3
+      url: 'https://quartopub.com/sites/libjohn/intro2r-datafestduke'

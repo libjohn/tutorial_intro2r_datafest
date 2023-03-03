@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.1.179">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>delme_datafest_test - About</title>
+<title>Intro2r: datafest@duke - About</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">delme_datafest_test</span>
+    <span class="navbar-title">Intro2r: datafest@duke</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -80,20 +80,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./import.html">
- <span class="menu-text">Import/Wrangle/Viz</span></a>
+    <a class="nav-link" href="./import.html">Import/Wrangle/Viz</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tidy_tuesday_itra.html">
- <span class="menu-text">Example EDA</span></a>
+    <a class="nav-link" href="./tidy_tuesday_itra.html">Example EDA</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
- <span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./about.html" aria-current="page">About</a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -121,14 +117,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
 
 </header>
 
-<p>This website is composed in the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>, as <a href="https://en.wikipedia.org/wiki/R_(programming_language)">R code</a> authored as a <a href="https://quarto.org/">Quarto</a> notebooks. With Quarto it is easy to render multiple report formats such as a PDF document or this website. In this case the report format is a web site and the site is hosted at Quarto.pub. The code for this workshop and this webpage are all part of a single RStudio project that can be found in a GitHub repository. The code-along exercises for this workshop are in the GitHub repository but they are not part of the web site. You can work through the exercises by first downloading the GitHub repository. Then find the exercises within the <code>_exercises</code> directory.</p>
+<p>This website is composed in the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>, as <a href="https://en.wikipedia.org/wiki/R_(programming_language)">R code</a> authored as a <a href="https://quarto.org/">Quarto</a> notebooks. With Quarto it is easy to render multiple report formats such as a PDF document or this website. In this case the report format is a <a href="https://libjohn.quarto.pub/intro2r-datafestduke/">web site hosted at Quarto.pub</a>. The code for this workshop and this webpage are all part of a single RStudio project that can be <a href="https://github.com/libjohn/tutorial_intro2r_datafest">found in a GitHub repository</a>. The code-along exercises for this workshop are in the GitHub repository but they are not part of the web site. You can work through the exercises by first downloading the GitHub repository. Then find the exercises within the <code>_exercises</code> directory.</p>
 <p>This introductory workshop is workshop is taught by the <a href="https://library.duke.edu/data">Center for Data and Visualization Sciences</a> in support of <a href="https://dukestatsci.github.io/datafest/">Duke’s DataFest</a>.</p>
 <p>For more information or resource on learning R, please visit the <a href="https://Rfun.library.duke.edu">Rfun learning series</a>.</p>
 
@@ -176,24 +171,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -229,42 +207,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>
