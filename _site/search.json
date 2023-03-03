@@ -53,7 +53,7 @@
     "href": "index.html#get-started",
     "title": "Intro to R for DataFest @ Duke",
     "section": "Get started",
-    "text": "Get started\n\nLogin to either\n\nDuke’s Virtual Software RStudio client (uses NetID)\nPosit.cloud\nYou can also use your own local install of RStudio. I will teach from the cloud version.\n\nStart a new project by importing the github repository for this workshop\n\nhttps://github.com/libjohn/delme_datafest_test"
+    "text": "Get started\n\nLogin to either\n\nDuke’s Virtual Software RStudio client (uses NetID)\nPosit.cloud\nYou can also use your own local install of RStudio. I will teach from the cloud version.\n\nStart a new project by importing the github repository for this workshop\n\nhttps://github.com/libjohn/tutorial_intro2r_datafest.git"
   },
   {
     "objectID": "LICENSE.html",
