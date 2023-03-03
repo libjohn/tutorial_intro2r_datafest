@@ -21,7 +21,7 @@ license: CC BY
 library(tidyverse)
 ```
 
-2.  Fill in the blanks. Using what you've seen in class, if `data/brodheadCenter.csv` is a CSV (comma separated values) file, how would you load the file into a new object called `brodhead`?
+2.  Fill in the blanks. Using what you've seen in class, if `data/brodhead_center.csv` is a CSV (comma separated values) file, how would you load the file into a new object called `brodhead`?
 
 ```{r}
 #| message: false
