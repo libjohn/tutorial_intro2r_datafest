@@ -28,6 +28,8 @@ library(skimr)
 
 ## Import data
 
+The data come from a [TidyTuesday](https://github.com/rfordatascience/tidytuesday), a weekly social learning project dedicated to gaining practical experience with R and data science. In this case the TidyTuesday data are based on [International Trail Running Association (ITRA)](https://itra.run/Races/FindRaceResults) data but inspired by Benjamin Nowak, . We will use the [TidyTuesday data that are on GitHub](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-10-26). Nowak's data are [also available on GitHub](https://github.com/BjnNowak/UltraTrailRunning).
+
 ```{r}
 race_df <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/race.csv")
 rank_df <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/ultra_rankings.csv")
@@ -91,8 +93,6 @@ race_df |>
   count(distance, sort = TRUE)
 ```
 
-jrljrl
-
 ```{r}
 rank_df |> 
   filter(race_year_id == 41449)
@@ -153,7 +153,7 @@ In this case I want to **join** the two data frames `rank_df` and `race_df` usin
 
 I can **assign** the output of a "data pipe" (i.e. data sentence) to use in subsequent code-chunks. A common R / Tidyverse assignment operator is the `<-` characters. You can read this as "gets value from".
 
-Additionally, I'm using a **pipe** operator (`|>`) as a conjunction to connect functions. In this way I can form a *data sentence*. Many people call the data sentence a *data pipe*, or just a *pipe*. Another common pipe operator is that may see looks like this: `%>%`. `\>` and `%>%` are basically synonymous.
+Additionally, I'm using a **pipe** operator (`|>`) as a conjunction to connect functions. In this way I can form a *data sentence*. Many people call the data sentence a *data pipe*, or just a *pipe*. You may see another common pipe operator: `%>%`. `\>` and `%>%` are synonymous.
 
 using `dplyr::left_join()` I combine the two data sets and then use {`ggplot2`} to create a line graph of participants by year.
 
@@ -165,9 +165,9 @@ my_df_joined <- rank_df |>
 
 ### Viz participants
 
-Let' make a quick line plot showing how many people participate in races each year. Here we have a `data` field this is also a date data-type. Data types are important and in this example using a data data-type means {`ggplot2`} will simplify our x-axis labels.
+Let' make a quick line plot showing how many people participate in races each year. Here we have a `date` field this is also a date data-type. Data types are important and in this example using a data data-type means {`ggplot2`} will simplify our x-axis labels.
 
-Here We use the {`lubridate`} package to help manage my date data-types. We also use {`ggplot2`} to generate a line graph as a *time series* via the {`ggplot2`} package and a `geom_line()` *layer*. Note that {`ggplot2`} uses the '`+`' as the conjunction or *pipe*.
+Here we use the {`lubridate`} package to help manage my date data-types. We also use {`ggplot2`} to generate a line graph as a *time series* via the {`ggplot2`} package and a `geom_line()` *layer*. Note that {`ggplot2`} uses the '`+`' as the conjunction or *pipe*.
 
 ```{r}
 rank_df |> 

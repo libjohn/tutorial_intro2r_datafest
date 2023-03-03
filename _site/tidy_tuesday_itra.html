@@ -228,6 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <section id="import-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-data">Import data</h2>
+<p>The data come from a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a>, a weekly social learning project dedicated to gaining practical experience with R and data science. In this case the TidyTuesday data are based on <a href="https://itra.run/Races/FindRaceResults">International Trail Running Association (ITRA)</a> data but inspired by Benjamin Nowak, . We will use the <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-10-26">TidyTuesday data that are on GitHub</a>. Nowak’s data are <a href="https://github.com/BjnNowak/UltraTrailRunning">also available on GitHub</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>race_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/race.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -955,7 +956,6 @@ $ time_in_seconds &lt;dbl&gt; 95725, 97229, 103747, 111217, 117981, 118000, 1206
 # … with 187 more rows</code></pre>
 </div>
 </div>
-<p>jrljrl</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>rank_df <span class="sc">|&gt;</span> </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(race_year_id <span class="sc">==</span> <span class="dv">41449</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1190,7 +1190,7 @@ $ time_in_seconds &lt;dbl&gt; 95725, 97229, 103747, 111217, 117981, 118000, 1206
 <h4 class="anchored" data-anchor-id="join-assign-and-pipe">Join, Assign, and Pipe</h4>
 <p>In this case I want to <strong>join</strong> the two data frames <code>rank_df</code> and <code>race_df</code> using the <code>left_join()</code> function.</p>
 <p>I can <strong>assign</strong> the output of a “data pipe” (i.e.&nbsp;data sentence) to use in subsequent code-chunks. A common R / Tidyverse assignment operator is the <code>&lt;-</code> characters. You can read this as “gets value from”.</p>
-<p>Additionally, I’m using a <strong>pipe</strong> operator (<code>|&gt;</code>) as a conjunction to connect functions. In this way I can form a <em>data sentence</em>. Many people call the data sentence a <em>data pipe</em>, or just a <em>pipe</em>. Another common pipe operator is that may see looks like this: <code>%&gt;%</code>. <code>\&gt;</code> and <code>%&gt;%</code> are basically synonymous.</p>
+<p>Additionally, I’m using a <strong>pipe</strong> operator (<code>|&gt;</code>) as a conjunction to connect functions. In this way I can form a <em>data sentence</em>. Many people call the data sentence a <em>data pipe</em>, or just a <em>pipe</em>. You may see another common pipe operator: <code>%&gt;%</code>. <code>\&gt;</code> and <code>%&gt;%</code> are synonymous.</p>
 <p>using <code>dplyr::left_join()</code> I combine the two data sets and then use {<code>ggplot2</code>} to create a line graph of participants by year.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>my_df_joined <span class="ot">&lt;-</span> rank_df <span class="sc">|&gt;</span> </span>
@@ -1201,8 +1201,8 @@ $ time_in_seconds &lt;dbl&gt; 95725, 97229, 103747, 111217, 117981, 118000, 1206
 </section>
 <section id="viz-participants" class="level3">
 <h3 class="anchored" data-anchor-id="viz-participants">Viz participants</h3>
-<p>Let’ make a quick line plot showing how many people participate in races each year. Here we have a <code>data</code> field this is also a date data-type. Data types are important and in this example using a data data-type means {<code>ggplot2</code>} will simplify our x-axis labels.</p>
-<p>Here We use the {<code>lubridate</code>} package to help manage my date data-types. We also use {<code>ggplot2</code>} to generate a line graph as a <em>time series</em> via the {<code>ggplot2</code>} package and a <code>geom_line()</code> <em>layer</em>. Note that {<code>ggplot2</code>} uses the ‘<code>+</code>’ as the conjunction or <em>pipe</em>.</p>
+<p>Let’ make a quick line plot showing how many people participate in races each year. Here we have a <code>date</code> field this is also a date data-type. Data types are important and in this example using a data data-type means {<code>ggplot2</code>} will simplify our x-axis labels.</p>
+<p>Here we use the {<code>lubridate</code>} package to help manage my date data-types. We also use {<code>ggplot2</code>} to generate a line graph as a <em>time series</em> via the {<code>ggplot2</code>} package and a <code>geom_line()</code> <em>layer</em>. Note that {<code>ggplot2</code>} uses the ‘<code>+</code>’ as the conjunction or <em>pipe</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>rank_df <span class="sc">|&gt;</span> </span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(race_df <span class="sc">|&gt;</span> <span class="fu">select</span>(race_year_id, date), <span class="at">by =</span> <span class="st">"race_year_id"</span>) <span class="sc">|&gt;</span></span>
