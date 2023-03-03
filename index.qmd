@@ -1,0 +1,24 @@
+---
+title: "Intro to R for DataFest @ Duke"
+---
+
+This is a Quarto website. Quarto is use to publish your analysis into various formats (PDF, Word, Website, Interactive, etc.) To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+We'll learn
+
+-   RStudio Projects
+
+-   [Importing, wrangling, and visualizing](import.qmd) data
+
+-   Show an [example of joining data and Exploratory Data Analysis](tidy_tuesday_itra.qmd)
+
+## Get started
+
+1.  Login to either
+    -   **Duke's Virtual Software** [RStudio client](https://cmgr.oit.duke.edu/containers/RStudio) (uses NetID)
+
+    -   [Posit.cloud](https://posit.cloud)
+
+    -   You can also use your own local install of RStudio. I will teach from the cloud version.
+2.  Start a new project by importing the github repository for this workshop
+    -   https://github.com/libjohn/delme_datafest_test

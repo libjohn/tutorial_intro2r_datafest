@@ -1,0 +1,96 @@
+---
+title: "Import Data"
+---
+
+In this workshop we recommend the [tidyverse](https://tidyverse.org) approach to learning and using R
+
+Tidyverse has several very handy library packages
+
+| package   | use            | package     | use                 |
+|-----------|----------------|-------------|---------------------|
+| `dplyr`   | data wrangling | `forcats`   | categorical data    |
+| `ggplot2` | visuzlization  | `lubridate` | dates and times     |
+| `readr`   | import CSV     | `stringr`   | regular expressions |
+| `readxl`  | import Excel   | `tidyr`     | pivot data          |
+| `purrr`   | iteration      |             |                     |
+
+## Load library packages
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)
+```
+
+## Import data
+
+In RStudio,, in the Files quadrant and tab, click the `data` folder, then left-click the `brodhead_center.csv` file. Using the context menu, choose the *Import Dataset...* option. Once inside the data wizard, you can paste the necessary code into the code chunk below
+
+```{r}
+# library(readr)
+brodhead_center <- read_csv("data/brodhead_center.csv")
+# View(brodheadCenter)
+```
+
+### Look at the data object
+
+```{r}
+brodhead_center
+```
+
+## Wrangle
+
+{[`dplyr`](https://dplyr.tidyverse.org)} verbs help you wrangle, clean, and normalize your data
+
+| dplyr function | use for                                    |
+|----------------|--------------------------------------------|
+| `select()`     | subset columns                             |
+| `filter()`     | subset rows                                |
+| `arrange()`    | sort rows by column variable values        |
+| `group_by()`   | use with summarize for subtotals           |
+| `summarize()`  | generate column totals and subtotals, etc. |
+| `count()`      | a specialized `summarize()` function       |
+
+### Examples
+
+```{r}
+brodhead_center |> 
+  select(name, type)
+```
+
+```{r}
+brodhead_center |> 
+  filter(menuType == "dessert")
+```
+
+```{r}
+brodhead_center |> 
+  arrange(cost)
+```
+
+```{r}
+brodhead_center |> 
+  count(menuType)
+```
+
+```{r}
+brodhead_center |> 
+  group_by(name) |> 
+  summarise(min_cost = min(cost), mean_cost = mean(cost), max_cost = max(cost))
+```
+
+## Visualize
+
+Visualize your data with {[ggplot2](https://ggplot2.tidyverse.org)}
+
+```{r}
+brodhead_center |> 
+  ggplot(aes(x = name, y = cost)) +
+  geom_boxplot() 
+```
+
+```{r}
+brodhead_center |> 
+  ggplot(aes(x = rating, y = cost)) +
+  geom_point(aes(color = name))
+```
