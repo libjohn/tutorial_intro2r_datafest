@@ -268,7 +268,7 @@ my_df_joined |>
 
 ### Pace per mile
 
-We want to calculate my a value for each runner's pace (i.e. `minute_miles`). We have to create and convert a character data-type of the `time` variable into a numeric floating point (or `dbl`) data-type so that we can calculate pace (i.e. race-minutes divided by distance.) These data transformations required a lot of manipulation as I was thinking through my goal. I could optimized this code, perhaps. However it works and I've got other things to do. Do I care if the CPU works extra hard? No, not in this case.
+We want to calculate a value for each runner's pace (i.e. `minute_miles`). We have to create and convert a character data-type of the `time` variable into a numeric floating point (or `dbl`) data-type so that we can calculate pace (i.e. race-minutes divided by distance.) These data transformations required a lot of manipulation as I was thinking through my goal. I could optimized this code, perhaps. However it works and I've got other things to do. Do I care if the CPU works extra hard? No, not in this case.
 
 ```{r, dev='svg'}
 my_df_joined |> 

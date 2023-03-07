@@ -9,7 +9,7 @@ Tidyverse has several very handy library packages
 | package   | use            | package     | use                 |
 |-----------|----------------|-------------|---------------------|
 | `dplyr`   | data wrangling | `forcats`   | categorical data    |
-| `ggplot2` | visuzlization  | `lubridate` | dates and times     |
+| `ggplot2` | visualization  | `lubridate` | dates and times     |
 | `readr`   | import CSV     | `stringr`   | regular expressions |
 | `readxl`  | import Excel   | `tidyr`     | pivot data          |
 | `purrr`   | iteration      |             |                     |
@@ -53,24 +53,78 @@ brodhead_center
 
 ### Examples
 
+#### `select()`
+
 ```{r}
 brodhead_center |> 
   select(name, type)
 ```
+
+::: column-margin
+[![Select columns](images/select.svg){fig-alt="Select columns"}](https://dplyr.tidyverse.org/reference/select.html)
+:::
+
+#### `filter()`
 
 ```{r}
 brodhead_center |> 
   filter(menuType == "dessert")
 ```
 
+::: column-margin
+[![Filter by rows](images/filter_by_rows.svg){fig-alt="Filter by rows"}](https://dplyr.tidyverse.org/reference/filter.html)
+:::
+
+#### `arrange()`
+
 ```{r}
 brodhead_center |> 
   arrange(cost)
 ```
 
+::: column-margin
+[![Arrange rows by the values in a column](images/arrange_rows.svg){fig-alt="Arrange rows by the values in a column"}](https://dplyr.tidyverse.org/reference/arrange.html)
+:::
+
+#### `mutate()`
+
+```{r}
+brodhead_center |> 
+  mutate(ratings_high = rating * 2)
+```
+
+::: column-margin
+[![Create new variable or modify variable with mutate()](images/mutate.svg){fig-alt="Create new variable or modify variable with mutate()"}](https://dplyr.tidyverse.org/reference/mutate.html)
+:::
+
+#### `count()`
+
+```{r}
+#| echo: false
+#| column: margin
+
+brodhead_center |> 
+  count(menuType) |> 
+  arrange(desc(n)) |> 
+  gt::gt() |> 
+  gt::tab_header(title = "Count values in a group")
+```
+
 ```{r}
 brodhead_center |> 
   count(menuType)
+```
+
+#### `group_by()` & `summarise()`
+
+```{r}
+#| echo: false
+#| column: margin
+
+brodhead_center |> 
+  summarise(Sum_of_cost = sum(cost)) |> 
+  gt::gt() |> 
+  gt::tab_header(title = "Summarise column")
 ```
 
 ```{r}
