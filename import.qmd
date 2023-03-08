@@ -6,13 +6,13 @@ In this workshop we recommend the [tidyverse](https://tidyverse.org) approach to
 
 Tidyverse has several very handy library packages
 
-| package   | use            | package     | use                 |
-|-----------|----------------|-------------|---------------------|
-| `dplyr`   | data wrangling | `forcats`   | categorical data    |
-| `ggplot2` | visualization  | `lubridate` | dates and times     |
-| `readr`   | import CSV     | `stringr`   | regular expressions |
-| `readxl`  | import Excel   | `tidyr`     | pivot data          |
-| `purrr`   | iteration      |             |                     |
+| package   | use                | package     | use                 |
+|-----------|--------------------|-------------|---------------------|
+| `dplyr`   | data wrangling     | `forcats`   | categorical data    |
+| `ggplot2` | visualization      | `lubridate` | dates and times     |
+| `readr`   | import CSV         | `stringr`   | regular expressions |
+| `purrr`   | iteration          | `tidyr`     | pivot data          |
+| `readxl`  | import Excel files |             |                     |
 
 ## Load library packages
 
