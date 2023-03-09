@@ -21,4 +21,4 @@ We'll learn
 
     -   You can also use your own local install of RStudio. I will teach from the cloud version.
 2.  Start a new project by importing the github repository for this workshop
-    -   [https://github.com/libjohn/tutorial_intro2r_datafest.git](https://github.com/libjohn/tutorial_intro2r_datafest.githttps://github.com/libjohn/tutorial_intro2r_datafest.git)
+    -   <https://github.com/libjohn/tutorial_intro2r_datafest.git>

@@ -100,6 +100,7 @@ brodhead_center |>
 #### `count()`
 
 ```{r}
+#| label: margin-picture-count
 #| echo: false
 #| column: margin
 
@@ -118,6 +119,7 @@ brodhead_center |>
 #### `group_by()` & `summarise()`
 
 ```{r}
+#| label: margin-picture-summarize
 #| echo: false
 #| column: margin
 
